@@ -9,7 +9,7 @@ module.exports = {
         
         // Build out the functionality of your deleteHouse function. It should find the index of the house in the houses database whose id correlates to the id passed in as a parameter on your endpoint (I reccomend you use the findIndex method). Once you have the index, you can delete that house from the database using the splice method. Once done, send the remaining houses to the front-end so that the view can be updated.
         const {id} = req.params
-        const idx = houses.findIndex((element) => {element.id === +id})
+        const idx = houses.findIndex((element) => {return element.id === +id})
         houses.splice(idx, 1)
         res.status(200).send(houses)
 
